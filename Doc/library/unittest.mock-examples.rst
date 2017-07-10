@@ -676,13 +676,13 @@ It will have ``self`` passed in as the first argument, which is exactly what I
 wanted:
 
     >>> class Foo:
-    ...   def foo(self):
+    ...   def bar(self):
     ...     pass
     ...
-    >>> with patch.object(Foo, 'foo', autospec=True) as mock_foo:
+    >>> with patch.object(Foo, 'bar', autospec=True) as mock_foo:
     ...   mock_foo.return_value = 'foo'
     ...   foo = Foo()
-    ...   foo.foo()
+    ...   foo.bar()
     ...
     'foo'
     >>> mock_foo.assert_called_once_with(foo)
